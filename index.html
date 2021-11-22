@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<table id="interaction_data" border="2">
+		<tr>
+			<th>Link</th>
+			<th>Retweeted</th>
+			<th>Quoted</th>
+			<th>Replied To</th>
+			<th>Total Interactions</th>
+		</tr>
+		<script>
+			$(document).ready(function () {
+			
+				$.getJSON('most_interactions.json', function (data) {
+					var tweet = '';
+					
+					$.each(data, function (key, value) {
+						tweet += '<tr>';
+						tweet += '<td>' + value.link + '</td>';
+						tweet += '<td>' + value.retweeted + '</td>';
+						tweet += '<td>' + value.quoted + '</td>';
+						tweet += '<td>' + value.replied_to + '</td>';
+						tweet += '<td>' + value.total_interactions + '</td>';
+						tweet += '</tr>'
+						$('#interaction_data').append(tweet);				
+					
+					});
+				});
+			});
+		</script>
+	</table>
+</body>
+
+</html>
