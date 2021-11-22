@@ -22,7 +22,7 @@
 					
 					$.each(data, function (key, value) {
 						tweet += '<tr>';
-						tweet += '<td>' + value.link + '</td>';
+						tweet += '<td>' + "<a href='" + value.link + "'>" + value.link + '</a>' + '</td>';
 						tweet += '<td>' + value.retweeted + '</td>';
 						tweet += '<td>' + value.quoted + '</td>';
 						tweet += '<td>' + value.replied_to + '</td>';
