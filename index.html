@@ -19,18 +19,14 @@
 			
 				$.getJSON('most_interactions.json', function (data) {
 					var tweet = '';
-					
-					$.each(data, function (key, value) {
-						tweet += '<tr>';
-						tweet += '<td>' + "<a href='https://" + value.link + "'>" + value.link + '</a>' + '</td>';
-						tweet += '<td>' + value.retweeted + '</td>';
-						tweet += '<td>' + value.quoted + '</td>';
-						tweet += '<td>' + value.replied_to + '</td>';
-						tweet += '<td>' + value.total_interactions + '</td>';
-						tweet += '</tr>'
-						$('#interaction_data').append(tweet);				
-					
-					});
+					tweet += '<tr>';
+					tweet += '<td>' + "<a href='https://" + value.link + "'>" + value.link + '</a>' + '</td>';
+					tweet += '<td>' + value.retweeted + '</td>';
+					tweet += '<td>' + value.quoted + '</td>';
+					tweet += '<td>' + value.replied_to + '</td>';
+					tweet += '<td>' + value.total_interactions + '</td>';
+					tweet += '</tr>'
+					$('#interaction_data').append(tweet);
 				});
 			});
 		</script>
